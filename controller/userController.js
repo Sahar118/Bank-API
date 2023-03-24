@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 import asyncHandler from '../middleware/asyncHandler.js';
-import advancedResults from "../middleware/advancedResult.js";
+
 // @desc    Get all users
 // @route   GET /api/v1/users
 // @access  Public
