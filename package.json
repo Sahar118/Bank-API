@@ -1,11 +1,31 @@
 {
-  "name": "bank-api-wa",
+  "name": "bank-api",
   "version": "1.0.0",
-  "description": "WA built with MERN",
+  "description": "Bank App build with MERN",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sahar118/Bank-API.git"
   },
   "author": "Sahar Bader",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sahar118/Bank-API/issues"
+  },
+  "homepage": "https://github.com/Sahar118/Bank-API#readme",
+  "devDependencies": {
+    "colors": "^1.4.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "slugify": "^1.6.5"
+  }
 }
