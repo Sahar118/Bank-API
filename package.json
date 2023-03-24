@@ -18,12 +18,10 @@
     "url": "https://github.com/Sahar118/Bank-API/issues"
   },
   "homepage": "https://github.com/Sahar118/Bank-API#readme",
-  "devDependencies": {
-    "colors": "^1.4.0"
-  },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "install": "^0.13.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
