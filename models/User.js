@@ -26,37 +26,15 @@ const UserSchema = new mongoose.Schema(
         // ],
         cash: {
             type: Number,
-            // default: 0,
+            default: 0,
         },
         credit: {
             type: Number,
             min: [0, "Total credit should be positive only"],
-            // default: 0,
+            default: 0,
         },
     },
-
-    {
-
-        toJSON: {
-            virtuals: true,
-            // Hide the _id and the __v field from the frontend
-            transform: function (_, ret) {
-                ret.id = ret._id;
-                delete ret._id;
-                delete ret.__v;
-            }
-        },
-        toObject: {
-            virtuals: true,
-            // Hide the _id and the __v field from the frontend
-            transform: function (_, ret) {
-                ret.id = ret._id;
-                delete ret._id;
-                delete ret.__v;
-            }
-        },
-
-    });
+);
 
 // Middleware - Create slug from name
 export default mongoose.model('User', UserSchema);

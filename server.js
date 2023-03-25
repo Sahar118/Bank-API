@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 // import colors from "colors";
 import morgan from "morgan";
-
+import cors from "cors"
 import user from './routes/userRoutes.js';
 
-// import errorHandler from "./middleware/errorHandler.js";
+import errorHandler from "./middleware/errorHandler.js";
 
 import connectDB from './config/db.js';
 
@@ -19,7 +19,7 @@ app.use(express.json())
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
-
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.json({
@@ -27,9 +27,10 @@ app.get('/', (req, res) => {
   });
 });
 
+
 app.use('/api/v1/user', user);
 
-// app.use(errorHandler);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
