@@ -98,6 +98,27 @@ export const depositeUser = asyncHandler(async (req, res, next) => {
         data: user,
     });
 });
+
+
+export const updateCredit = asyncHandler(async (req, res, next) => {
+    const specificUser = await User.findById(req.params.id);
+    specificUser.credit = Number(specificUser.credit) + Number(req.params.credit);
+    const user = await User.findByIdAndUpdate(req.params.id, specificUser, {
+        new: true,
+        runValidators: true,
+    });
+    if (!user) {
+        return next(
+            new Error(`User that end with '${req.params.id.slice(-6)}' not found`)
+        );
+    }
+    res.status(200).json({
+        success: true,
+        data: user,
+    });
+});
+
+
 export const withdrawUser = asyncHandler(async (req, res, next) => {
     const specificUser = await User.findById(req.params.id);
     specificUser.cash = Number(specificUser.cash) - Number(req.params.cash);

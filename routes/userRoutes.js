@@ -30,6 +30,10 @@ router
     .delete(deleteUser);
 
 router
+    .route('/updateCredit/:id/:cash')
+    .put(updateCredit)
+
+router
     .route('/deposite/:id/:cash')
     .put(depositeUser)
 router
