@@ -9,6 +9,7 @@ import {
     depositeUser,
     withdrawUser,
     transferUser,
+    updateCredit,
     getUsersByCashAmount
 } from '../controller/userController.js'
 
