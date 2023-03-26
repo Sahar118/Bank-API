@@ -102,7 +102,7 @@ export const depositeUser = asyncHandler(async (req, res, next) => {
 
 export const updateCredit = asyncHandler(async (req, res, next) => {
     const specificUser = await User.findById(req.params.id);
-    specificUser.credit = Number(specificUser.credit) + Number(req.params.credit);
+    specificUser.cash = Number(specificUser.cash) + Number(req.params.cash);
     const user = await User.findByIdAndUpdate(req.params.id, specificUser, {
         new: true,
         runValidators: true,
